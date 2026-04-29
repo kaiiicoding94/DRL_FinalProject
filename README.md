@@ -5,7 +5,10 @@
 
 ## 🎬 專案展示
 
-https://github.com/kaiiicoding94/DRL_FinalProject/raw/main/DRL_FinalProject_compressed.mp4
+<video controls width="640" height="360">
+  <source src="DRL_FinalProject_compressed.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
@@ -49,27 +52,33 @@ https://github.com/kaiiicoding94/DRL_FinalProject/raw/main/DRL_FinalProject_comp
 
 ## 系統架構
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    前端視覺化介面                        │
-│              (Python Dash / Streamlit)                  │
-│  ┌─────────────┐ ┌─────────────┐ ┌───────────────────┐  │
-│  │  Q-Value    │ │  Policy     │ │  SHAP Feature     │  │
-│  │  分佈圖     │ │  熱圖       │ │  權重圖           │   │
-│  └─────────────┘ └─────────────┘ └───────────────────┘  │
-├─────────────────────────────────────────────────────────┤
-│                    後端訓練引擎                          │
-│  ┌─────────────────────────────────────────────────┐    │
-│  │           D3QN (Dueling Double DQN)             │    │
-│  │         Stable Baselines3 Framework             │    │
-│  └─────────────────────────────────────────────────┘    │
-├─────────────────────────────────────────────────────────┤
-│                    模擬環境                              │
-│  ┌─────────────────────────────────────────────────┐    │
-│  │      OpenAI Gymnasium Custom Grid-World         │    │
-│  │        (動態障礙物隨機移動)                       │    │
-│  └─────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────┘
+```mermaid
+block-beta
+  columns 3
+
+  block:frontend:3
+    columns 3
+    A["🖥️ 前端視覺化介面\n(Python Dash / Streamlit)"]:3
+    B["Q-Value\n分佈圖"]
+    C["Policy\n熱圖"]
+    D["SHAP Feature\n權重圖"]
+  end
+
+  space:3
+
+  block:backend:3
+    columns 1
+    E["⚙️ 後端訓練引擎\nD3QN (Dueling Double DQN)\nStable Baselines3 Framework"]
+  end
+
+  space:3
+
+  block:env:3
+    columns 1
+    F["🌐 模擬環境\nOpenAI Gymnasium Custom Grid-World\n動態障礙物隨機移動"]
+  end
+
+  frontend --> backend --> env
 ```
 
 ---
