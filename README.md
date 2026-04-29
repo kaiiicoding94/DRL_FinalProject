@@ -53,32 +53,23 @@
 ## 系統架構
 
 ```mermaid
-block-beta
-  columns 3
+flowchart TD
+    subgraph Frontend["🖥️ 前端視覺化介面 — Python Dash / Streamlit"]
+        B["Q-Value 分佈圖"]
+        C["Policy 熱圖"]
+        D["SHAP Feature 權重圖"]
+    end
 
-  block:frontend:3
-    columns 3
-    A["🖥️ 前端視覺化介面\n(Python Dash / Streamlit)"]:3
-    B["Q-Value\n分佈圖"]
-    C["Policy\n熱圖"]
-    D["SHAP Feature\n權重圖"]
-  end
+    subgraph Backend["⚙️ 後端訓練引擎"]
+        E["D3QN — Dueling Double DQN\nStable Baselines3 Framework"]
+    end
 
-  space:3
+    subgraph Env["🌐 模擬環境"]
+        F["OpenAI Gymnasium Custom Grid-World\n動態障礙物隨機移動"]
+    end
 
-  block:backend:3
-    columns 1
-    E["⚙️ 後端訓練引擎\nD3QN (Dueling Double DQN)\nStable Baselines3 Framework"]
-  end
-
-  space:3
-
-  block:env:3
-    columns 1
-    F["🌐 模擬環境\nOpenAI Gymnasium Custom Grid-World\n動態障礙物隨機移動"]
-  end
-
-  frontend --> backend --> env
+    Frontend -->|決策輸出| Backend
+    Backend -->|環境互動| Env
 ```
 
 ---
