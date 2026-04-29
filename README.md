@@ -6,10 +6,12 @@
 ## 🎬 專案展示
 
 <p align="center">
-  <video src="DRL_FinalProject.mp4" width="720" controls>
-    Your browser does not support the video tag.
-  </video>
+  <a href="https://github.com/kaiiicoding94/DRL_FinalProject/raw/main/DRL_FinalProject.mp4">
+    <img src="https://img.shields.io/badge/▶_點擊觀看展示影片-blue?style=for-the-badge&logo=github&logoColor=white" alt="Watch Demo Video"/>
+  </a>
 </p>
+
+> 💡 點擊上方按鈕即可下載 / 觀看專案展示影片。
 
 ---
 
